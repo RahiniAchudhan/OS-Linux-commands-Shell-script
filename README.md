@@ -440,7 +440,7 @@ cat > file23
 1005 | Sam |  5000 | HR
 
 
-```sed -n -e '2,/Joe/p' file23
+```sed -n -e '2,/Joe/p' file23```
 ## OUTPUT
 
 
