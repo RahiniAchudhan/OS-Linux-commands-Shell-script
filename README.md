@@ -42,77 +42,24 @@ s.n. dasgupta
 ### Display the content of the files
 ```cat < file1```
 ## OUTPUT
-
-chanchal singhvi
-
-c.k.shukla
-
-s.n. dasgupta
-
-sumit chakrobarty
+![Screenshot (189)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/6ca5edc1-fa91-44f0-9c92-37e53399c2c2)
 
 ```cat < file2```
 ## OUTPUT
-
-anil aggarwal
-
-barun sengupta
-
-c.k.shukla
-
-lalit chowdury
-
-s.n. dasgupta
+![Screenshot (190)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/85c731a5-b1c4-437f-8f05-c473035443f2)
 
 # Comparing Files
 ```cmp file1 file2```
 ## OUTPUT
- file1 file2 differ: char 1, line 1
+![Screenshot (191)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/dcf534a6-99dd-4bc2-b601-667cca5e0aee)
  
 ```comm file1 file2```
  ## OUTPUT
-
- 
- anil aggarwal
-   
-	barun sengupta
-    
-	c.k.shukla
-
-chanchal singhvi
-
-c.k.shukla
-    
-	lalit chowdury
-               
-		s.n. dasgupta
-
-sumit chakrobarty
-
+![Screenshot (192)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/c5a9921e-c213-4eb8-958d-453e2a6e45c4)
 
 ```diff file1 file2```
 ## OUTPUT
-
---- file1
-
-+++ file2
-
-@@ -1,4 +1,5 @@
-
--chanchal singhvi
-
-+anil aggarwal
-
-+barun sengupta
-
- c.k.shukla
-
-+lalit chowdury
-
- s.n. dasgupta
-
--sumit chakrobarty
-
+![Screenshot (193)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/2da51cd3-e660-4c8e-85b5-3891033ef313)
 \ No newline at end of file
 #Filters
 
@@ -135,30 +82,15 @@ cat > file22
 
 ```cut -c1-3 file11```
 ## OUTPUT
-
-
-hel
-
-Thi
+![Screenshot (194)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/f1de8441-328a-4602-92c7-0febd670dae8)
 
 ```cut -d "|" -f 1 file22```
 ## OUTPUT
-
-1001
-
-1002
-
-1003
-
+![Screenshot (195)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/e7e04cd9-55c8-440e-9cc5-5e15b4e621b9)
 
 ```cut -d "|" -f 2 file22```
 ## OUTPUT
-
-Ram
-
-tom
-
-joe
+![Screenshot (196)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/e12042b0-0271-4823-af8a-7493884cfaee)
 
 cat < newfile 
 ```
@@ -172,74 +104,31 @@ hello world
  
 ```grep Hello newfile ```
 ## OUTPUT
-
-Hello world
+![Screenshot (198)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/a95bd96d-bbb9-4eaf-938d-3c183696ca09)
 
 ```grep hello newfile ```
 ## OUTPUT
-
-
-hello world
-
+![Screenshot (199)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/8806a80f-3320-4a7d-9fe0-c445885f5d74)
 
 ```grep -v hello newfile ```
 ## OUTPUT
-Hello world
-
+![Screenshot (200)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/c1c75f7e-2b07-451b-bedf-a667e4389f88)
 
 ```cat newfile | grep -i "hello"```
 ## OUTPUT
-
-
-Hello world
-hello world
+![Screenshot (201)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/4ba4f3de-87eb-4dab-9671-fc004ee51ad7)
 
 ```cat newfile | grep -i -c "hello"```
 ## OUTPUT
-
-2
-
-
+![Screenshot (202)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/622ce37b-b9ff-4b43-80b2-8c3c5a87407e)
 
 ```grep -R ubuntu /etc```
 ## OUTPUT
-
-BusyBox v1.31.1 () multi-call binary.
-
-Usage: grep [-HhnlLoqvsriwFE] [-m N] [-A/B/C N] PATTERN/-e PATTERN.../-f FILE [F ILE]...
-
-Search for PATTERN in FILEs (or stdin)
-```
-    -H      Add 'filename:' prefix
-    -h      Do not add 'filename:' prefix
-    -n      Add 'line_no:' prefix
-    -l      Show only names of files that match
-    -L      Show only names of files that don't match
-    -c      Show only count of matching lines
-    -o      Show only the matching part of line
-    -q      Quiet. Return 0 if PATTERN is found, 1 otherwise
-    -v      Select non-matching lines
-    -s      Suppress open and read errors
-    -r      Recurse
-    -i      Ignore case
-    -w      Match whole words only
-    -x      Match whole lines only
-    -F      PATTERN is a literal (not regexp)
-    -E      PATTERN is an extended regexp
-    -m N    Match up to N times per file
-    -A N    Print N lines of trailing context
-    -B N    Print N lines of leading context
-    -C N    Same as '-A N -B N'
-    -e PTRN Pattern to match
-    -f FILE Read pattern from file
-```
+![Screenshot (203)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/29a97096-3d25-44e8-9ee1-89196450c032)
 
 ```grep -w -n world newfile```
 ## OUTPUT
-
-1:Hello world
-
-2:hello world
+![Screenshot (204)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/3ef941b8-b408-467a-8421-386c707ffa92)
 
 cat < newfile 
 ```
@@ -267,30 +156,20 @@ Hello world hello world
 
 ```egrep -w '(H|h)ello' newfile ```
 ## OUTPUT
-
-Hello world hello world
-
+![Screenshot (205)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/2e9a9361-c012-4199-9c85-a70d9ae068d7)
 
 ```egrep -w '(H|h)ell[a-z]' newfile ```
 ## OUTPUT
-
-Hello world hello world
-
-
-
+![Screenshot (206)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/c0332a26-1ce8-4a8b-8840-52b4ba626381)
 
 ```egrep '(^hello)' newfile ```
 ## OUTPUT
-
-hello world
+![Screenshot (207)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/79db0678-2f7c-41fd-99ad-db7bdcff88cd)
 
 ```egrep '(world$)' newfile ```
 ## OUTPUT
+![Screenshot (208)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/66600ccb-c3e4-45a8-9686-025499a22710)
 
-
-Hello world
-
-hello world
 ```egrep '(World$)' newfile ```
 ## OUTPUT
 
