@@ -40,27 +40,52 @@ s.n. dasgupta
 ^d
 ```
 ### Display the content of the files
-```cat < file1```
+cat < file1
 ## OUTPUT
-![Screenshot (189)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/6ca5edc1-fa91-44f0-9c92-37e53399c2c2)
+chanchal singhvi
+c.k. shukla
+s.n. dasgupta
+sumit chakrobarty
 
-```cat < file2```
+
+cat < file2
 ## OUTPUT
-![Screenshot (190)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/85c731a5-b1c4-437f-8f05-c473035443f2)
+anil aggarwal
+barun sengupta
+c.k. shukla
+lalit chowdury
+s.n. dasgupta
+
 
 # Comparing Files
-```cmp file1 file2```
+cmp file1 file2
 ## OUTPUT
-![Screenshot (191)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/dcf534a6-99dd-4bc2-b601-667cca5e0aee)
- 
-```comm file1 file2```
+file1 file2 differ: char1,line1
+comm file1 file2
  ## OUTPUT
-![Screenshot (192)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/c5a9921e-c213-4eb8-958d-453e2a6e45c4)
+ anil aggarwal
+      barun sengupta
+      c.k. shukla
+chanchal singhvi
+c.k. shukla
+        lalit chowdury
+                s.n. dasgupta
 
-```diff file1 file2```
+ 
+diff file1 file2
 ## OUTPUT
-![Screenshot (193)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/2da51cd3-e660-4c8e-85b5-3891033ef313)
-\ No newline at end of file
+--- file1
++++ file2
+@@ -1,4 +1,5 @@
+-chanchal singhvi
++anil aggarwal
++barun sengupta
+ c.k. shukla
++lalit chowdury
+ s.n. dasgupta
+-sumit chakrobarty
+
+
 #Filters
 
 ### Create the following files file11, file22 as follows:
@@ -80,17 +105,28 @@ cat > file22
 ```
 
 
-```cut -c1-3 file11```
+cut -c1-3 file11
 ## OUTPUT
-![Screenshot (194)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/f1de8441-328a-4602-92c7-0febd670dae8)
+Hel
+Thi
 
-```cut -d "|" -f 1 file22```
-## OUTPUT
-![Screenshot (195)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/e7e04cd9-55c8-440e-9cc5-5e15b4e621b9)
 
-```cut -d "|" -f 2 file22```
+
+
+cut -d "|" -f 1 file22
 ## OUTPUT
-![Screenshot (196)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/e12042b0-0271-4823-af8a-7493884cfaee)
+1001
+1002
+1003
+
+
+
+cut -d "|" -f 2 file22
+## OUTPUT
+Ram
+tom
+Joe
+
 
 cat < newfile 
 ```
@@ -102,33 +138,52 @@ cat > newfile
 Hello world
 hello world
  
-```grep Hello newfile ```
+grep Hello newfile 
 ## OUTPUT
-![Screenshot (198)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/a95bd96d-bbb9-4eaf-938d-3c183696ca09)
+Hello world
 
-```grep hello newfile ```
-## OUTPUT
-![Screenshot (199)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/8806a80f-3320-4a7d-9fe0-c445885f5d74)
 
-```grep -v hello newfile ```
-## OUTPUT
-![Screenshot (200)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/c1c75f7e-2b07-451b-bedf-a667e4389f88)
 
-```cat newfile | grep -i "hello"```
-## OUTPUT
-![Screenshot (201)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/4ba4f3de-87eb-4dab-9671-fc004ee51ad7)
 
-```cat newfile | grep -i -c "hello"```
+grep hello newfile 
 ## OUTPUT
-![Screenshot (202)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/622ce37b-b9ff-4b43-80b2-8c3c5a87407e)
+hello world
 
-```grep -R ubuntu /etc```
-## OUTPUT
-![Screenshot (203)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/29a97096-3d25-44e8-9ee1-89196450c032)
 
-```grep -w -n world newfile```
+
+
+grep -v hello newfile 
 ## OUTPUT
-![Screenshot (204)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/3ef941b8-b408-467a-8421-386c707ffa92)
+Hello world
+
+
+
+cat newfile | grep -i "hello"
+## OUTPUT
+Hello world
+hello world
+
+
+
+
+cat newfile | grep -i -c "hello"
+## OUTPUT
+2
+
+
+
+grep -R ubuntu /etc
+## OUTPUT
+recursion
+
+
+
+grep -w -n world newfile   
+## OUTPUT
+1:Hello world
+2:hello world
+
+
 
 cat < newfile 
 ```
@@ -151,71 +206,79 @@ Linux is best in this World
  ```
 egrep -w 'Hello|hello' newfile 
 ## OUTPUT
-
-Hello world hello world
-
-```egrep -w '(H|h)ello' newfile ```
-## OUTPUT
-![Screenshot (205)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/2e9a9361-c012-4199-9c85-a70d9ae068d7)
-
-```egrep -w '(H|h)ell[a-z]' newfile ```
-## OUTPUT
-![Screenshot (206)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/c0332a26-1ce8-4a8b-8840-52b4ba626381)
-
-```egrep '(^hello)' newfile ```
-## OUTPUT
-![Screenshot (207)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/79db0678-2f7c-41fd-99ad-db7bdcff88cd)
-
-```egrep '(world$)' newfile ```
-## OUTPUT
-![Screenshot (208)](https://github.com/RahiniAchudhan/OS-Linux-commands-Shell-script/assets/145742838/66600ccb-c3e4-45a8-9686-025499a22710)
-
-```egrep '(World$)' newfile ```
-## OUTPUT
-
-Lunix is best in the World
-```egrep '((W|w)orld$)' newfile``` 
-## OUTPUT
-
 Hello world
-
-hello world
-
-Lunix is best in the World
-
-
-```egrep '[1-9]' newfile``` 
-## OUTPUT
-
-Lunix is world number 1
-
-
-```egrep 'Linux.*world' newfile ```
-## OUTPUT
-
-Lunix is world number 1
-
-```egrep 'Linux.*World' newfile ```
-## OUTPUT
-
-Lunix is best in the World
-
-```egrep l{2} newfile```
-## OUTPUT
-
-Hello world
-
 hello world
 
 
-```egrep 's{1,2}' newfile```
+
+
+egrep -w '(H|h)ello' newfile 
+## OUTPUT
+Hello world
+hello world
+
+
+
+
+egrep -w '(H|h)ell[a-z]' newfile 
+## OUTPUT
+Hello world
+hello world
+
+
+
+
+
+egrep '(^hello)' newfile 
+## OUTPUT
+hello world
+
+
+egrep '(world$)' newfile 
+## OUTPUT
+Hello world
+hello world
+
+
+egrep '(World$)' newfile 
+## OUTPUT
+Linux is best in the World
+
+
+
+egrep '((W|w)orld$)' newfile 
+## OUTPUT
+Hello world
+hello world
+Linux is best in this World
+
+
+
+egrep '[1-9]' newfile 
+## OUTPUT
+Linux is world number 1
+
+
+
+egrep 'Linux.*world' newfile 
+## OUTPUT
+Linux is world number 1
+
+egrep 'Linux.*World' newfile 
+## OUTPUT
+Linux is best in this World
+
+egrep l{2} newfile
+## OUTPUT
+Hello world
+hello world
+
+
+
+egrep 's{1,2}' newfile
 ## OUTPUT 
-
-Lunix is world number 1
-
-Unix ix predecessor
-
-Lunix is best in the World
+Unix is predecessor
+Linux is best in this World
 
 cat > file23
 ```
@@ -231,159 +294,144 @@ cat > file23
 ```
 
 
-```sed -n -e '3p' file23```
+sed -n -e '3p' file23
 ## OUTPUT
-
-1002 | tom |  5000 | Admin
-
-```sed -n -e '$p' file23```
-## OUTPUT
-
-1001 | Ram | 10000 | HR
-
-
-```sed  -e 's/Ram/Sita/' file23```
-## OUTPUT
-
-1001 | Sita | 10000 | HR
-
-1001 | Sita | 10000 | HR
-
-1002 | tom |  5000 | Admin
-
-1003 | joe |  7000 | Developer
-
-1005 | Sam |  5000 | HR
-
-1004 | Sit |  7000 | Dev
-
-1003 | Joe |  7000 | Developer
-
-1001 | Sita | 10000 | HR
-
-
-
-
-```sed  -e '2s/Ram/Sita/' file23```
-## OUTPUT
-
-1001 | Ram | 10000 | HR
-
-1001 | Sita | 10000 | HR
-
-1002 | tom |  5000 | Admin
-
-1003 | joe |  7000 | Developer
-
-1005 | Sam |  5000 | HR
-
-1004 | Sit |  7000 | Dev
-
-1003 | Joe |  7000 | Developer
-
-1001 | Ram | 10000 | HR
-
-
-
-```sed  '/tom/s/5000/6000/' file23```
-## OUTPUT
-
-1001 | Ram | 10000 | HR
-
-1001 | Ram | 10000 | HR
-
-1002 | tom |  5000 | Admin
-
-1003 | joe |  7000 | Developer
-
-1005 | Sam |  5000 | HR
-
-1004 | Sit |  7000 | Dev
-
-1003 | Joe |  7000 | Developer
-
-1001 | Ram | 10000 | HR
-
-```sed -n -e '1,5p' file23```
-## OUTPUT
-
-
-1001 | Ram | 10000 | HR
-
-1001 | Ram | 10000 | HR
-
-1002 | tom |  5000 | Admin
-
-1003 | joe |  7000 | Developer
-
-1005 | Sam |  5000 | HR
-
-
-```sed -n -e '2,/Joe/p' file23```
-## OUTPUT
-
-
-1001 | Ram | 10000 | HR
-
 1002 | tom | 5000 | Admin
 
-1003 | Joe | 7000 | Developer
 
-```sed -n -e '/tom/,/Joe/p' file23```
+sed -n -e '$p' file23
 ## OUTPUT
+1001 | Ram | 10000 | HR
 
+
+sed  -e 's/Ram/Sita/' file23
+## OUTPUT
+1001 | Sita | 10000 | HR
+1001 | Sita | 10000 | HR
 1002 | tom | 5000 | Admin
+1003 | Joe | 7000 | Developer
+1005 | Sam | 5000 | HR
+1004 | Sit | 7000 | Dev
+1003 | Joe | 7000 | Developer
+1001 | Sita | 10000 | HR
 
+
+
+sed  -e '2s/Ram/Sita/' file23
+## OUTPUT
+1001 | Ram | 10000 | HR
+1001 | Sita | 10000 | HR
+1002 | tom | 5000 | Admin
+1003 | Joe | 7000 | Developer
+1005 | Sam | 5000 | HR
+1004 | Sit | 7000 | Dev
+1003 | Joe | 7000 | Developer
+1001 | Ram | 10000 | HR
+
+
+
+sed  '/tom/s/5000/6000/' file23
+## OUTPUT
+1001 | Ram | 10000 | HR
+1001 | Ram | 10000 | HR
+1002 | tom | 6000 | Admin
+1003 | Joe | 7000 | Developer
+1005 | Sam | 5000 | HR
+1004 | Sit | 7000 | Dev
+1003 | Joe | 7000 | Developer
+1001 | Ram | 10000 | HR
+
+
+sed -n -e '1,5p' file23
+## OUTPUT
+1001 | Ram | 10000 | HR
+1001 | Ram | 10000 | HR
+1002 | tom | 5000 | Admin
+1003 | Joe | 7000 | Developer
+1005 | Sam | 5000 | HR
+
+
+sed -n -e '2,/Joe/p' file23
+## OUTPUT
+1001 | Ram | 10000 | HR
+1002 | tom | 5000 | Admin
 1003 | Joe | 7000 | Developer
 
-```seq 10 ```
+
+
+sed -n -e '/tom/,/Joe/p' file23
 ## OUTPUT
+1002 | tom | 5000 | Admin
+1003 | Joe | 7000 | Developer
 
-1 2 3 4 5 6 7 8 9 10
 
 
-```seq 10 | sed -n '4,6p'```
+seq 10 
 ## OUTPUT
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
 
-4 5 6
 
-```seq 10 | sed -n '2,~4p'```
+
+seq 10 | sed -n '4,6p'
 ## OUTPUT
+4
+5
+6
 
 
-2 3 4
-```seq 3 | sed '2a hello'``
+
+seq 10 | sed -n '2,~4p'
 ## OUTPUT
+2
+3
+4
 
-1 2 hello 3
 
-```seq 2 | sed '2i hello'```
+seq 3 | sed '2a hello'
 ## OUTPUT
+1
+2
+hello
+3
 
-1 hello 2
 
-```seq 10 | sed '2,9c hello'```
+seq 2 | sed '2i hello'
 ## OUTPUT
+1
+hello
+2
 
-1 hello 10
-
-```sed -n '2,4{s/^/$/;p}' file23``
+seq 10 | sed '2,9c hello'
 ## OUTPUT
+1
+hello
+10
 
+
+sed -n '2,4{s/^/$/;p}' file23
+## OUTPUT
 $1001 | Ram | 10000 | HR
-
 $1002 | tom | 5000 | Admin
+$1003 | Joe | 7000 | Developer
 
-$1003 | Joe | 7000 | Develop
 
-```sed -n '2,4{s/$/*/;p}' file23```
+
+sed -n '2,4{s/$/*/;p}' file23
+## OUTPUT
 1001 | Ram | 10000 | HR*
-
 1002 | tom | 5000 | Admin*
-
 1003 | Joe | 7000 | Developer*
 
-# Sorting File content
+#Sorting File content
 cat > file21
 ```
 1001 | Ram | 10000 | HR
@@ -392,18 +440,12 @@ cat > file21
 1005 | Sam |  5000 | HR
 1004 | Sit |  7000 | Dev
 ``` 
-```sort file21```
-
-##OUTPUT
-
+sort file21
+## OUTPUT
 1001 | Ram | 10000 | HR
-
 1002 | tom | 5000 | Admin
-
 1003 | Joe | 7000 | Developer
-
 1004 | Sit | 7000 | Dev
-
 1005 | Sam | 5000 | HR
 
 cat > file22
@@ -417,27 +459,25 @@ cat > file22
 ``` 
 uniq file22
 ## OUTPUT
-
-1001 | Ram | 10000 | HR 
-1002 | tom | 5000 | Admin 
-1003 | Joe | 7000 | Developer 
-1005 | Sam | 5000 | HR 
+1001 | Ram | 10000 | HR
+1002 | tom | 5000 | Admin
+1003 | Joe | 7000 | Developer
+1005 | Sam | 5000 | HR
 1004 | Sit | 7000 | Dev
 
-# Using tr command
 
-```cat file23 | tr [:lower:] [:upper:]```
+#Using tr command
+
+cat file23 | tr [:lower:] [:upper:]
  ## OUTPUT
 1001 | RAM | 10000 | HR
-1001 | RAM | 10000 | HR 
-1002 | TOM | 5000 | ADMIN 
-1003 | JOE | 7000 | DEVELOPER 
-1005 | SAM | 5000 | HR 
-1004 | SIT | 7000 | DEV 
-1003 | JOE | 7000 | DEVELOPER 
 1001 | RAM | 10000 | HR
-
-
+1002 | TOM | 5000 | ADMIN
+1003 | JOE | 7000 | DEVELOPER
+1005 | SAM | 5000 | HR
+1004 | SIT | 7000 | DEV
+1003 | JOE | 7000 | DEVELOPER
+1001 | RAM | 10000 | HR
 cat < urllist.txt
 ```
 www. yahoo. com
@@ -451,51 +491,63 @@ www. yahoo. com
 www. google. com
 www. mrcet.... com
  ```
-```cat urllist.txt | tr -d ' '```
-
+cat urllist.txt | tr -d ' '
  ## OUTPUT
-
-www.yahoo.com 
-www.google.com 
+www.yahoo.com
+www.google.com
 www.mrcet....com
+
  
-```cat urllist.txt | tr -d ' ' | tr -s '.'```
+cat urllist.txt | tr -d ' ' | tr -s '.'
 ## OUTPUT
-
-www.yahoo.com 
-
-www.google.com 
-
+www.yahoo.com
+www.google.com
 www.mrcet.com
 
-#Backup commands
 
+
+#Backup commands
 tar -cvf backup.tar *
 ## OUTPUT
+bench.py
+file1
+file11
+file2
+file21
+file22
+file23
+hello.c
+hello.js
+newfile
+readme.txt
+urllist.txt
 
-tar: can't open 'bench.py': I/O error file21 file22 file23 tar: can't open 'hello.c': I/O error tar: can't open 'hello.js': I/O error newfile tar: can't open 'readme.txt': I/O error urllist.txt tar: error exit delayed from previous errors
-
-```
 mkdir backupdir
  
 mv backup.tar backupdir
-
+ 
 tar -tvf backup.tar
-```
 ## OUTPUT
+-rw-r--r-- user/group 0 2024-02-25 14:30:00 file1.txt
+drwxr-xr-x user/group 0 2024-02-25 14:30:00 directory1/
+-rw-r--r-- user/group 1024 2024-02-25 14:30:00 directory1/file2.txt
+-rw-r--r-- user/group 2048 2024-02-25 14:30:00 directory1/file3.txt
+
+
 tar -xvf backup.tar
-
-```tar -xvf backup.tar```
 ## OUTPUT
-
+x file1.txt
+x directory1/
+x directory1/file2.txt
+x directory1/file3.txt
 gzip backup.tar
 
 ls .gz
 ## OUTPUT
- 
+ backup.tar.gz
 gunzip backup.tar.gz
 ## OUTPUT
-
+backup.tar
  
 # Shell Script
 ```
@@ -505,7 +557,7 @@ echo 'echo Hello World‘; exit 0 >> my-script.sh
 chmod 755 my-script.sh
 ./my-script.sh
 ## OUTPUT
-
+echo Hello World
  
 cat << stop > herecheck.txt
 ```
@@ -517,6 +569,9 @@ stop
 
 cat herecheck.txt
 ## OUTPUT
+hello in this world
+i cant stop
+for this non stop movement
 
 
 cat < scriptest.sh 
@@ -555,15 +610,23 @@ chmod 777 scriptest.sh
 ./scriptest.sh 1 2 3
 
 ## OUTPUT
+File name is ./scriptest.sh
+File name is scriptest.sh
+First arg. is 1
+Second arg. is 2
+Third arg. is 3
+Fourth arg. is
+The $@ is 1 2 3
+The $\# is $#
+The $$ is 124
 
  
 ls file1
 ## OUTPUT
-
+file1
 echo $?
 ## OUTPUT 
-./one
-bash: ./one: Permission denied
+0
  
 echo $?
 ## OUTPUT 
@@ -572,6 +635,7 @@ abcd
  
 echo $?
  ## OUTPUT
+1
 
 
  
@@ -603,15 +667,22 @@ else
 echo "$val1 is less than $val2"
 fi
 ```
-## OUTPUT
-
+##OUTPUT
+val1=baseball
+val2=hockey
+if [ $val1 \> $val2 ]
+then
+echo "$val1 is greater than $val2"
+else
+echo "$val1 is less than $val2"
+fi
 
 
 chmod 755 strcomp.sh
  
 ./strcomp.sh 
 ## OUTPUT
-
+baseball is less than hockey
 
 # check file ownership
 cat < psswdperm.sh 
@@ -638,7 +709,7 @@ fi
  ```
 ./psswdperm.sh
 ## OUTPUT
-
+You are the owner of the /etc/passwd file
 # check if with file location
 cat>ifnested.sh 
 ```bash
@@ -684,7 +755,8 @@ fi
 
 ./ifnested.sh 
 ## OUTPUT
-
+/root The object exists, is it a file?
+No,/root it is not a file!
 
 
 # using numeric test comparisons
@@ -728,7 +800,8 @@ $ chmod 755 iftest.sh
  
 $ ./iftest.sh 
 ##OUTPUT
-
+“The test value 10 is greater than 5”
+“The values are different”
 # check if a file
 cat > ifnested.sh 
 ```bash
@@ -777,6 +850,8 @@ $ chmod 755 ifnested.sh
  
 $ ./ifnested.sh 
 ##OUTPUT
+“/root The object exists, is it a file?”
+“No,/root it is not a file!”
 
 # looking for a possible value using elif
 cat elifcheck.sh 
@@ -805,6 +880,13 @@ $ chmod 755 elifcheck.sh
  
 $ ./elifcheck.sh 
 ## OUTPUT
+Welcome Ram
+Please enjoy your visit
+Welcome Rahim
+Please enjoy your visit
+Special testing account
+gganesh, Do not forget to logout when you're done
+Sorry, you are not allowed here
 
 
 # testing compound comparisons
@@ -821,6 +903,7 @@ fi
 $ chmod 755 ifcompound.sh
 $ ./ifcompound.sh 
 ## OUTPUT
+The file exists and you can write to it
 
 # using the case command
 cat >casecheck.sh 
@@ -840,7 +923,12 @@ esac
 $ chmod 755 casecheck.sh 
  
 $ ./casecheck.sh 
- 
+## OUTPUT 
+Welcome Ram/Rahim
+Please enjoy your visit
+Special testing account
+gganesh, Do not forget to logout when you're done
+Sorry, you are not allowed here 
 cat > whiletest
 ```bash
 #!/bin/bash
@@ -855,7 +943,17 @@ done
 $ chmod 755 whiletest.sh
  
 $ ./whiletest.sh
- 
+  ## OUTPUT
+ 10
+9
+8
+7
+6
+5
+4
+3
+2
+1
  
 cat untiltest.sh 
 ```bash
@@ -868,6 +966,12 @@ var1=$[ $var1 - 25 ]
 done
 ``` 
 $ chmod 755 untiltest.sh
+$ ./ untiltest.sh
+ ## OUTPUT
+ 100
+ 75
+ 50
+ 25
  
  
  
@@ -882,20 +986,16 @@ done
  ```
  
 $ chmod 755 forin1.sh
+$ ./forin1.sh
+## OUTPUT
+The next state is Alabama
+The next state is Alaska
+The next state is Arizona
+The next state is Arkansas
+The next state is California
+The next state is Colorado 
  
- 
-cat forin2.sh 
-```bash
-\#!/bin/bash
-\# another example of how not to use the for command
-for test in I don't know if this'll work
-do
-echo “word:$test”
-done
- ```
- 
-$ chmod 755 forin2.sh
- 
+
 cat forin2.sh 
 ```bash
 \#!/bin/bash
@@ -908,7 +1008,10 @@ done
 $ chmod 755 forin2.sh
  
 $ ./forin2.sh 
- 
+## OUTPUT
+word:I
+word:dont know if thisll
+word:work 
 cat forin3.sh 
 ```bash
 \#!/bin/bash
@@ -919,19 +1022,14 @@ echo "word:$test"
 done
 ```
 $ ./forin3.sh 
- 
-cat forin1.sh 
-```bash
-#!/bin/bash
-# basic for command
-for test in Alabama Alaska Arizona Arkansas California Colorado
-do
-echo The next state is $test
-done
-```
-$ chmod 755 forin1.sh
-
 ## OUTPUT
+word:I
+word:don't
+word:know
+word:if
+word:this'll
+word:work
+
 cat forinfile.sh 
 ```bash
 #!/bin/bash
@@ -953,7 +1051,13 @@ Bhadrachalam
 Khammam
 
 ## OUTPUT
-
+Visit beautiful Hyderabad
+Visit beautiful Alampur
+Visit beautiful Basara
+Visit beautiful Warangal
+Visit beautiful Adilabad
+Visit beautiful Bhadrachalam
+Visit beautiful Khammam
 
 cat forctype.sh 
 ```bash
@@ -967,6 +1071,11 @@ done
 $ chmod 755 forctype.sh
 $ ./forctype.sh 
 ## OUTPUT
+The value of i is 1
+The value of i is 2
+The value of i is 3
+The value of i is 4
+The value of i is 5
 
 cat forctype1.sh 
 ```bash
@@ -998,7 +1107,11 @@ $ chmod 755 fornested1.sh
  
 $ ./fornested1.sh 
  ## OUTPUT
-
+1 - 5
+2 - 4
+3 - 3
+4 - 2
+5 - 1
  
 cat forbreak.sh 
 ```bash
@@ -1014,13 +1127,16 @@ echo "Iteration number: $var1"
 done
 echo "The for loop is completed“
 ```
-## OUTPUT
-
 $ chmod 755 forbreak.sh
  
 $ ./forbreak.sh 
+## OUTPUT
+Iteration number: 1
+Iteration number: 2
+The for loop is completed
+
  
-cat forbreak.sh 
+cat forcontinue.sh 
 ```bash
 #!/bin/bash
 # breaking out of a for loop
@@ -1040,6 +1156,11 @@ $ chmod 755 forcontinue.sh
  
 $ ./forcontinue.sh 
 ## OUTPUT
+Iteration number: 1
+Iteration number: 2
+Iteration number: 4
+Iteration number: 5
+The for loop is completed
  
 cat exread.sh 
 ```bash
@@ -1054,7 +1175,8 @@ $ chmod 755 exread.sh
  
 $ ./exread.sh 
 ## OUTPUT
-
+Enter your name: John
+Hello John, welcome to my program.
 
  cat exread1.sh
 ```bash
@@ -1066,6 +1188,8 @@ echo "Hello $name, welcome to my program. “
 $ chmod 755 exread1.sh 
 
 ## OUTPUT
+Enter your name: sanju
+Hello sanju, welcome to my program.
 
 
 
@@ -1091,6 +1215,8 @@ fi
 
  
  ./funcex.sh 1 2
+$ bash script.sh 1 2
+The result is 2
 
  
 cat argshift.sh
@@ -1105,7 +1231,9 @@ $ chmod 777 argshift.sh
 
 ## OUTPUT
 $ ./argshift.sh 1 2 3
- 
+1
+2
+3 
  cat argshift1.sh
 ```bash
  #/bin/bash 
@@ -1122,7 +1250,9 @@ done
 $ chmod 777 argshift.sh
 ## OUTPUT
 $ ./argshift.sh 1 2 3
- 
+1
+2
+3 
 cat argshift.sh
 ```bash
 #!/bin/bash 
@@ -1135,7 +1265,8 @@ set +x
 ```
 ## OUTPUT
  ./argshift.sh 1 2 3
- 
+ + (( 0 ))
+ + set +x
  
 cat > nc.awk
 ```bash
@@ -1166,7 +1297,9 @@ ubcdfghj
 ```
 awk -f nc.awk data.dat
 ## OUTPUT 
- 
+ total characters 75
+Number of Lines are 10
+No of Words count: 10 
 cat > palindrome.sh
 ```bash
 #num=545
@@ -1193,7 +1326,12 @@ else
 fi
 ```
 ## OUTPUT 
-
+Enter the number
+121
+Number is palindrome
+Enter the number
+69
+Number is NOT palindrome
 
 # RESULT:
 The Commands are executed successfully.
